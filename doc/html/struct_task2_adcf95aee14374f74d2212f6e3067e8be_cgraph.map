@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_task_manager_8c.html#a29652348c8c74d3b5ba933ffc9e0aa4e" title="getTime" alt="" coords="200,5,269,35"/>
+<area shape="rect" id="node7" href="$class_simple_task.html#a4672dc7d7e44a66fd996f147f6aec5e9" title="SimpleTask::Sleep" alt="" coords="169,59,300,88"/>
+<area shape="rect" id="node5" href="$_task_manager_8c.html#a10b73e75d375e5c244e32ea46be775bf" title="clock_gettime" alt="" coords="351,5,452,35"/>
+</map>

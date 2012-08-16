@@ -1,0 +1,173 @@
+#include <iostream>
+#include <sstream>
+#include "TaskManager.hpp"
+
+struct SupervisorTask
+{
+	static SimpleTask *task;
+	static void callback();
+};
+
+struct Task1
+{
+	static int stopTask;
+	static SimpleTask *task;
+	static void callback();
+};
+
+struct Task2
+{
+	static SimpleTask *task;
+	static void callback();
+};
+
+SimpleTask* SupervisorTask::task = 0;
+SimpleTask* Task1::task = 0;
+SimpleTask* Task2::task = 0;
+int Task1::stopTask = 0;
+
+void SupervisorTask::callback()
+{
+	std::cout << "SupervisorTask" << std::endl;
+
+	if(Task1::task)
+		Task1::task->Run();
+	if(Task2::task)
+		Task2::task->Run();
+	
+	while(!Task1::stopTask)
+	{
+		task->Sleep(500);
+	}
+
+	
+}
+
+void  ReverseString(std::string& val)
+{
+	char temp;
+	int length = val.size()-1;
+	for(int i = 0; i < length / 2 + length % 2; i++)
+	{
+		temp = val[i];
+		val[i] = val[length - i];
+		val[length - i] = temp;
+	}
+}
+
+void Task1::callback()
+{
+	int i = 0;
+	for(;;)
+	{
+//		std::cout << "Task 1" << std::endl;
+		task->Sleep(500);
+		std::string val;
+		std::cin >> val;
+		ReverseString(val);
+		std::cout << val << "\n";
+		if (i++ > 5)
+			stopTask = 1;
+	}
+}
+
+void Task2::callback()
+{
+	for(;;)
+	{
+		std::cout << "Time: " << LowLevel::getTime() <<  std::endl;
+		task->Sleep(5000);
+	}
+}
+
+
+void PrintHelp ()
+{
+	std::cout << "Usage: \n \n"; 
+	std::cout << "\t TaskManagerTest [-tio priority] [-tt priority] [-h]\n";
+	std::cout << "\t -tio priority - start input - output task with priority \n";
+	std::cout << "\t -tt priority - start timer task with priority \n";
+	std::cout << "\t -h - show this message \n";
+}
+
+
+int main(int args, const char* argv[])
+{
+	try
+	{
+		SupervisorTask::task = new SimpleTask(0, SupervisorTask::callback);
+		
+	}
+	catch(ThreadError)
+	{
+		std::cout << "Internal error while supervisor task creating" << std::endl;
+		return 3;
+	}
+
+
+	for(int i = 1; i < args; i++)
+	{
+		
+		if(std::string(argv[i]) == "-tio")
+		{
+			if(i+1 < args)
+			{
+				int val;
+				std::istringstream ( std::string( argv[i+1]) ) >> val;
+				
+				try
+				{
+					Task1::task = new SimpleTask(val, Task1::callback);
+				}
+				catch(ThreadError)
+				{
+					std::cout << "Internal error while task creating" << std::endl;
+					return 2;
+				}
+
+			} 
+			else
+			{
+				PrintHelp();
+				return 1;
+			}
+
+		}
+		if(std::string(argv[i]) == "-tt")
+		{
+			if(i+1 < args)
+			{
+				int val;// = itoa(argv[i+1]);
+				std::istringstream ( std::string( argv[i+1]) ) >> val;
+				try
+				{
+
+					Task2::task = new SimpleTask(val, Task2::callback);
+				}
+				catch(ThreadError)
+				{
+					std::cout << "Internal error while task creating" << std::endl;
+					return 2;
+				}
+			}
+			else
+			{
+				PrintHelp();
+				return 1;
+			}
+		}
+		if (std::string(argv[i]) == "-h")
+		{
+			PrintHelp();
+			return 0;
+		}
+			
+	}
+
+
+	SupervisorTask::task->Run();
+
+
+	LowLevel::TaskManager();
+
+}

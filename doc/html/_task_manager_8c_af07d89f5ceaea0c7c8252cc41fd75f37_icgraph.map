@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_task_manager_impl_8h.html#a42fb1e3491c0eb662c63cd9a3d2e1be8" title="CreateTask" alt="" coords="103,5,193,35"/>
+<area shape="rect" id="node7" href="$_task_manager_impl_8h.html#a702b140f51430d15dbdbd51ffcdf6c98" title="DestroyTask" alt="" coords="100,59,196,88"/>
+<area shape="rect" id="node5" href="$class_simple_task.html#a59c325a6a92fec57f99d04c3ce2a4930" title="SimpleTask::SimpleTask" alt="" coords="249,5,417,35"/>
+<area shape="rect" id="node9" href="$class_simple_task.html#aeb4d609f616d4d3e3a26a77d375a5df0" title="SimpleTask::~SimpleTask" alt="" coords="245,59,421,88"/>
+</map>

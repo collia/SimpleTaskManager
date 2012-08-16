@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$struct_supervisor_task.html#a2bf578227dc40cd0b97566eec59689dc" title="SupervisorTask::callback" alt="" coords="105,109,273,139"/>
+<area shape="rect" id="node12" href="$class_simple_task.html#a5ade469db826402e2c36197074474a03" title="SimpleTask::Run" alt="" coords="323,163,445,192"/>
+<area shape="rect" id="node16" href="$_task_manager_8c.html#af597d14e7428c2e8660a4d8ee507f52a" title="TaskManager" alt="" coords="139,213,240,243"/>
+<area shape="rect" id="node5" href="$struct_task1.html#a82dd8f411b70cbde8dd042463e59f365" title="Task1::callback" alt="" coords="327,5,441,35"/>
+<area shape="rect" id="node7" href="$class_simple_task.html#a4672dc7d7e44a66fd996f147f6aec5e9" title="SimpleTask::Sleep" alt="" coords="495,57,625,87"/>
+<area shape="rect" id="node9" href="$struct_task2.html#adcf95aee14374f74d2212f6e3067e8be" title="Task2::callback" alt="" coords="327,109,441,139"/>
+</map>

@@ -1,0 +1,29 @@
+
+#include "TaskManager.hpp"
+
+
+SimpleTask::SimpleTask(int priority, LowLevel::TaskCallback callback) throw(ThreadError)
+{
+	task = LowLevel::CreateTask(priority, callback);
+	if (task == 0)
+		throw ThreadError();
+}
+
+
+void SimpleTask::Sleep(int time)
+{
+	LowLevel::Sleep(task, time);
+}
+
+void SimpleTask::Run()
+{
+	LowLevel::Run(task);
+}
+
+
+SimpleTask::~SimpleTask()
+{
+	int res = LowLevel::DestroyTask(task);
+	if (res != 0)
+		throw ThreadError();
+}

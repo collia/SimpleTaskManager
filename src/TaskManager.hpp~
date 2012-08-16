@@ -1,0 +1,27 @@
+#ifndef TASKMANAGER_HPP
+#define TASKMANAGER_HPP
+
+
+#include "TaskManagerImpl.h"
+
+class ThreadError
+{
+};
+
+
+
+class SimpleTask
+{
+private:
+	LowLevel::Task* task;
+	
+public:
+
+	SimpleTask(int priority, LowLevel::TaskCallback) throw(ThreadError);
+	void Sleep(int time);
+	void Run();
+	virtual ~SimpleTask();
+	
+};
+
+#endif //TASKMANAGER_HPP

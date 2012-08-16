@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_task_manager_8hpp.html" title="SimpleTask class is hi level wrapper of task manaher functionality." alt="" coords="52,83,199,112"/>
+<area shape="rect" id="node9" href="$_task_manager_8c.html" title="Dile contains set of C functions which realisating low level functionality." alt="" coords="223,83,356,112"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="In main function creating two tasks (depends on input parameters). One task gets string from stdin an..." alt="" coords="5,160,101,189"/>
+<area shape="rect" id="node7" href="$_task_manager_8cpp.html" title="In file realised mhetods of SimpleTaskManager class." alt="" coords="125,160,272,189"/>
+</map>

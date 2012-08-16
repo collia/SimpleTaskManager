@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_task_manager_8c.html#a74db0931bcdf630a7f94788d9d237281" title="Sleep" alt="" coords="132,32,185,61"/>
+<area shape="rect" id="node5" href="$_task_manager_8c.html#a29652348c8c74d3b5ba933ffc9e0aa4e" title="getTime" alt="" coords="241,5,311,35"/>
+<area shape="rect" id="node9" href="$_task_manager_8c.html#a992dad2524a2c69baa3ac1df0dd4fad0" title="swapTask" alt="" coords="235,59,317,88"/>
+<area shape="rect" id="node7" href="$_task_manager_8c.html#a10b73e75d375e5c244e32ea46be775bf" title="clock_gettime" alt="" coords="367,5,468,35"/>
+</map>
